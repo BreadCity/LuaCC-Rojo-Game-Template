@@ -2,7 +2,7 @@
   "name": "luacc-template",
   "description": "NOT AN NPM PACKAGE | A Lua Code Combiner Template",
   "author": "YieldingCoder <yieldingc@pm.me>",
-  "license": "AGPL-3.0-OR-LATER",
+  "license": "(EUPL-1.2 OR AGPL-3.0-OR-LATER)",
   "scripts": {
     "build": "./bundle.cmd"
   }

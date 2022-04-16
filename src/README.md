@@ -11,6 +11,8 @@ The `index.lua` files are entry points (`Client/[Character|First|Player]/index.l
 
 Avoid this. It will not work as you expect.
 
+Use `game.<whatever>` instead.
+
 ## `require()`s
 
 `require()`s work in the following syntax: `require('a/b')`.<br/>
