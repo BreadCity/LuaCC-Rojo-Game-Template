@@ -1,4 +1,4 @@
-// Copyright (c) 2022 YieldingCoder. Licensed under the AGPL-3.0-OR-LATER
+// Copyright (c) 2022 YieldingCoder. Licensed under (AGPL-3.0-OR-LATER OR EUPL-1.2)
 const crypto = require('crypto');
 const { execSync } = require('child_process');
 const fs = require('fs');
