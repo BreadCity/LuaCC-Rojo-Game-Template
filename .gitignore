@@ -6,7 +6,16 @@
 /*.rbxl.lock
 
 # Output Files
-/dist
+rojo/ReplicatedFirst/script.client.lua
+rojo/StarterPlayerScripts/script.client.lua
+rojo/StarterCharacterScripts/script.client.lua
+rojo/ServerScriptService/script.server.lua
+
+# Copied Source Files
+src/Client/Character/Shared
+src/Client/First/Shared
+src/Client/Player/Shared
+src/Server/Shared
 
 # VSCode Settings
 .vscode/settings.json

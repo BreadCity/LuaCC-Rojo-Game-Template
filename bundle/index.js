@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const BundleDir = path.resolve(__filename, '..')
 const ProjectRoot = path.resolve(BundleDir, '..');
+const DistSubdir = process.argv[2]
 
 // https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 const walk = dir => {
@@ -26,10 +27,10 @@ const walk = dir => {
 
 // Get Arguments
 const files = walk(path.resolve(process.cwd()));
-const outFile = path.resolve(ProjectRoot, 'dist', 'out.tmp-1.lua');
+const outFile = path.resolve(ProjectRoot, 'rojo', DistSubdir, 'out.tmp-1.lua');
 let arguments = '-o ' + path.relative(process.cwd(), outFile) + '';
 arguments +=
-  ' ' + path.relative(process.cwd(), path.resolve(process.cwd(), 'init')) + '';
+  ' ' + path.relative(process.cwd(), path.resolve(process.cwd(), 'index')) + '';
 for (const index in files) {
   if (Object.hasOwnProperty.call(files, index)) {
     if (files[index].endsWith('.lua')) {
@@ -37,8 +38,6 @@ for (const index in files) {
         .relative(process.cwd(), files[index])
         .replace('.lua', '');
       if (
-        filePath !== 'src\\StarterGUI\\Scripts\\Main\\init' &&
-        filePath !== 'src/StarterGUI/Scripts/Main/init' &&
         !filePath.endsWith('.client')
       ) {
         arguments += ' ' + filePath.replace(/\\/g, '/') + '';
@@ -93,4 +92,4 @@ const final = output.replace(
   crypto.createHash('sha256').update(output).digest('hex'),
 );
 // Write Output File
-fs.writeFileSync(path.resolve(outFile, '..', 'out.lua'), final);
+fs.writeFileSync(path.resolve(outFile, '..', process.argv[3] ?? 'out.lua'), final);
