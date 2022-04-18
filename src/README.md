@@ -28,4 +28,4 @@ Additionally, files in `Shared` must `require()` using `require('Shared/a/b')` i
 ### Example Output
 
 Given the current project structure & file contents, the following should be outputted to the console:
-![Image](../ghassets/RobloxStudioBeta-16-04-2022_12-59-33.png)
+![Image](../ghassets/OutputExample.png)
